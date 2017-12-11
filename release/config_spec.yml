@@ -11,3 +11,4 @@ config_spec:
     default: '5432'
   namespace:
     default: superbigtool
+  private_registry_api: {}

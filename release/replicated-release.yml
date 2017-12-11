@@ -26,10 +26,12 @@ assets:
     docker:
       image: quay.io/superbigtool/api:2.1.0
       private: true
+      dest: docker/api.tar
       no_template: true
   postgres:
     docker:
       image: postgres:10.1
+      dest: docker/postgres.tar
       private: false
       no_template: true
 
