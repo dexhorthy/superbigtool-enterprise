@@ -13,24 +13,28 @@ specs:
     json: kubernetes/resources/deployments.json
     kubernetes.resource:
       type: deployments
-      selectors:
+      selector:
         app: superbigtool
   - builtin: kubernetes.resource
     description: Kubernetes services resource list
     json: kubernetes/resources/services.json
     kubernetes.resource:
       type: services
-      selectors:
+      selector:
         app: superbigtool
   - builtin: kubernetes.logs
     description: Postgres container logs
     raw: kubernetes/logs/postgres
     kubernetes.logs:
-      pod_name: postgres
-      container_name: postgres
+      selector:
+        app: superbigtool
+        tier: postgres
+      container: postgres
   - builtin: kubernetes.logs
     description: Super Big Tool api container logs
     raw: kubernetes/logs/api
     kubernetes.logs:
-      pod_name: api
-      container_name: api
+      selector:
+        app: superbigtool
+        tier: api
+      container: api
