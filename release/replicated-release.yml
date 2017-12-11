@@ -41,7 +41,6 @@ config_spec:
       repo: github.com/replicatedhq/superbigtool
       ref: aef8fe5afe5af67fe6789fa678fe876fa867fbc
       path: release/config_spec.yml
-      dest: ./
 
 # OR
 #config_spec:
