@@ -9,6 +9,10 @@ config_spec:
     default: 'postgres'
   postgres_port:
     default: '5432'
+  embedded_postgres:
+    default: "true"
   namespace:
+    description: "Kubernetes namespace to deploy SuperBigTool into. Will be created if it does not exist"
     default: superbigtool
-  private_registry_api: {}
+  private_registry_api:
+    description: "A private docker registry accessible by your cluster"
