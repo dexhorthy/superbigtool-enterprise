@@ -1,0 +1,5 @@
+- type: core.command
+  name: running date command
+  raw: /commands/date
+  config:
+    command: date +%s

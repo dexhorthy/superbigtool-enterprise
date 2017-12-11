@@ -1,0 +1,13 @@
+config_spec:
+  hmac_secret:
+    default: '{{ RandomString 64 }}'
+  postgres_user:
+    default: '{{ RandomString 32 }}'
+  postgres_password:
+    default: '{{ RandomString 64 }}'
+  postgres_host:
+    default: 'postgres'
+  postgres_port:
+    default: '5432'
+  namespace:
+    default: superbigtool
