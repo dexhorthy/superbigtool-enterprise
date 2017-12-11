@@ -1,5 +1,36 @@
-- type: core.command
-  name: running date command
-  raw: /commands/date
-  config:
-    command: date +%s
+specs:
+  - builtin: kubernetes.version
+    description: Kubernetes server version
+    json: kubernetes/server-version.json
+  - builtin: kubernetes.api-versions
+    description: Kubernetes api versions
+    json: kubernetes/api-versions.json
+  - builtin: kubernetes.cluster-info
+    description: Kubernetes cluster info
+    json: kubernetes/cluster-info.json
+  - builtin: kubernetes.resource
+    description: Kubernetes deployments resource list
+    json: kubernetes/resources/deployments.json
+    kubernetes.resource:
+      type: deployments
+      selectors:
+        app: superbigtool
+  - builtin: kubernetes.resource
+    description: Kubernetes services resource list
+    json: kubernetes/resources/services.json
+    kubernetes.resource:
+      type: services
+      selectors:
+        app: superbigtool
+  - builtin: kubernetes.logs
+    description: Postgres container logs
+    raw: kubernetes/logs/postgres
+    kubernetes.logs:
+      pod_name: postgres
+      container_name: postgres
+  - builtin: kubernetes.logs
+    description: Super Big Tool api container logs
+    raw: kubernetes/logs/api
+    kubernetes.logs:
+      pod_name: api
+      container_name: api
