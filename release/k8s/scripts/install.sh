@@ -18,6 +18,17 @@ kubectl create secret generic jwt \
 kubectl create namespace "$NS"
 kubectl apply --namespace "$NS" -f ./k8s/
 
+kubectl patch --namespace "$NS" deployment api -p '{
+  "spec": {
+    "template": {
+      "spec": {
+        "containers": [
+          {"name": "api", "image": "{{ ConfigOption "private_registry_api" }}:2.1.0"}
+        ]
+      }
+    }
+  }
+}'
 
 echo "
 

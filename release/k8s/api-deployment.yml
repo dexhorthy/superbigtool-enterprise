@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: {{ ConfigOption "private_registry_api" }}:2.1.0
+          image: quay.io/superbigtool/api:2.1.0
           ports:
             - containerPort: 3000
           env:
